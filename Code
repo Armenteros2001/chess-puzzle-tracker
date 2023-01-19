@@ -1,0 +1,25 @@
+import cv2
+
+# Load the image
+image = cv2.imread("image.jpg")
+
+# Convert the image to the HSV color space
+hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+
+# Define a range of green color
+lower_green = (29, 86, 6)
+upper_green = (64, 255, 255)
+
+# Create a mask for green color
+mask = cv2.inRange(hsv, lower_green, upper_green)
+
+# Find contours in the mask
+contours, _ = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+
+# Count the number of green objects in the image
+green_objects_count = len(contours)
+print(f'Number of green objects: {green_objects_count}')
+
+/PASO 1: usar OpenCV para que cuente la cantidad de aciertos y errores que tengo con los puzzles que hago cada día en base a una captura de imagen 
+/PASO 2: cargar resultados automáticamente en un excel y armar gráficos y métricas que se actualicen con la carga diaria
+/PASO 3: armar un registro diario, semanal, mensual y anual de resultados y progreso
