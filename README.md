@@ -1,2 +1,2 @@
 # chesspuzzletracker
-To track your results and metric in chess puzzles
+To track your results and metrics in chess puzzles
